@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5D5D5"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/last_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="You spent 00:00 on ... last time."
+        android:textColor="#27076E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        app:layout_constraintTop_toBottomOf="@+id/last_time"
+        app:layout_constraintBottom_toTopOf="@+id/buttons" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/input_menu"
+        app:layout_constraintTop_toBottomOf="@+id/timer">
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/_play" />
+
+        <ImageButton
+            android:id="@+id/pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/_pause" />
+
+        <ImageButton
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/_stop" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_menu"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttons">
+
+        <TextView
+            android:id="@+id/input_prompt"
+            android:layout_width="130dp"
+            android:layout_height="47dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Enter your task: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/user_Input"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1B1919"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#0D0E0E" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
